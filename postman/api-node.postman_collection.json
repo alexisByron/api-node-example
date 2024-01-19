@@ -10,13 +10,122 @@
 			"name": "user",
 			"item": [
 				{
-					"name": "Insert",
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "Insert",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Shetume andres2\",\n    \"email\":\"Shetume@gmail.com\",\n    \"password\":\"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_api_user}}/insert",
+									"host": [
+										"{{base_url_api_user}}"
+									],
+									"path": [
+										"insert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiU2hldHVtZSBhbmRyZXMzIiwiZW1haWwiOiJTaGV0dW1lQGdtYWlsLmNvbSIsImlkIjoiNjVhOTgyZDhiYWQxNzg3MTMwNWMyY2IxIiwiaWF0IjoxNzA1NjA4NTkxLCJleHAiOjE3MDU2MDkxOTF9.iIqEOhpGNCVMbvba5-9kWDWQC7Tj3C9ZYfjLZCa5ppU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url_api_user}}/getAll",
+									"host": [
+										"{{base_url_api_user}}"
+									],
+									"path": [
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_api_user}}/getById/65a9403ad1b771a8342f0af6",
+									"host": [
+										"{{base_url_api_user}}"
+									],
+									"path": [
+										"getById",
+										"65a9403ad1b771a8342f0af6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_api_user}}/update/65a9403ad1b771a8342f0af6",
+									"host": [
+										"{{base_url_api_user}}"
+									],
+									"path": [
+										"update",
+										"65a9403ad1b771a8342f0af6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_api_user}}/delete/65a9471c9238d1f517546dc4",
+									"host": [
+										"{{base_url_api_user}}"
+									],
+									"path": [
+										"delete",
+										"65a9471c9238d1f517546dc4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "request primarios user"
+				},
+				{
+					"name": "login",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"alexis andres\",\n    \"email\":\"alexis.moya.14@gmail.com\",\n    \"password\":\"1234\"\n}",
+							"raw": "{\n    \"email\":\"Shetume@gmail.com\",\n    \"password\":\"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,101 +133,63 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url_api_user}}/insert",
+							"raw": "{{base_url_api_user}}/login",
 							"host": [
 								"{{base_url_api_user}}"
 							],
 							"path": [
-								"insert"
+								"login"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "get all",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_api_user}}/getAll",
-							"host": [
-								"{{base_url_api_user}}"
-							],
-							"path": [
-								"getAll"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get by id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_api_user}}/getById/65a9403ad1b771a8342f0af6",
-							"host": [
-								"{{base_url_api_user}}"
-							],
-							"path": [
-								"getById",
-								"65a9403ad1b771a8342f0af6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_api_user}}/update/65a9403ad1b771a8342f0af6",
-							"host": [
-								"{{base_url_api_user}}"
-							],
-							"path": [
-								"update",
-								"65a9403ad1b771a8342f0af6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{base_url_api_user}}/delete/65a9471c9238d1f517546dc4",
-							"host": [
-								"{{base_url_api_user}}"
-							],
-							"path": [
-								"delete",
-								"65a9471c9238d1f517546dc4"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "pet",
-			"item": [
-				{
-					"name": "Insert",
+					"name": "register",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"shetume andres segundo\",\n    \"type\":\"cat\"\n}",
+							"raw": "{\n    \"name\":\"alexis\",\n    \"email\":\"alexismoya@gmail.com\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_api_user}}/register",
+							"host": [
+								"{{base_url_api_user}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "request user"
+		},
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "add pet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiU2hldHVtZSBhbmRyZXMzIiwiZW1haWwiOiJTaGV0dW1lQGdtYWlsLmNvbSIsImlkIjoiNjVhOTgyZDhiYWQxNzg3MTMwNWMyY2IxIiwiaWF0IjoxNzA1NjI1OTU3LCJleHAiOjE3MDU2MjY1NTd9.iY5umz1prhijdG2THEHoihGNSym1kk5cXr1H4NHbThg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"shetume junior\",\n    \"type\":\"cat\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -173,7 +244,7 @@
 					"response": []
 				},
 				{
-					"name": "update",
+					"name": "update pet",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -191,7 +262,7 @@
 					"response": []
 				},
 				{
-					"name": "delete",
+					"name": "delete pet",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -203,6 +274,65 @@
 							"path": [
 								"delete",
 								"65a9403ad1b771a8342f0af6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "otp validator",
+			"item": [
+				{
+					"name": "generar otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"+56972329500\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_api}}/otp/generarOtp",
+							"host": [
+								"{{base_url_api}}"
+							],
+							"path": [
+								"otp",
+								"generarOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validar otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"+56972329500\",\n    \"code\":\"269669\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_api}}/otp/verificarOtp",
+							"host": [
+								"{{base_url_api}}"
+							],
+							"path": [
+								"otp",
+								"verificarOtp"
 							]
 						}
 					},
