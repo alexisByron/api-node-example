@@ -14,6 +14,7 @@ const getAll = async (req, res) => {
     message: "Get All service",
     data: allData,
     count: allData.length,
+    user: req.user,
   });
 };
 

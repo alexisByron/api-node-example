@@ -9,6 +9,14 @@ const PetSchema = Schema({
     type: String,
     required: false,
   },
+  createBy: {
+    type: Schema.ObjectId,
+    ref: "User",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 module.exports = model("Pet", PetSchema);

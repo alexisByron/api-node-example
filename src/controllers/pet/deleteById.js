@@ -3,7 +3,6 @@ const PetModel = require("../../models/Pet");
 const deleteById = async (req, res) => {
   try {
     const id = req.params.id;
-    console.log("🚀 ~ deleteById ~ id:", id);
     if (!id) throw new Error("Id is required");
 
     const resultDelete = await PetModel.findByIdAndDelete(id);

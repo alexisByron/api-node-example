@@ -12,10 +12,12 @@ const {
   deleteById,
 } = require("../controllers/pet");
 
-router.post("/insert", insert);
-router.get("/getAll", getAll);
-router.get("/getById/:id", getById);
-router.put("/update/:id", updateById);
-router.delete("/delete/:id?", deleteById);
+const { isAuth } = require("../midelwares/auth");
+
+router.post("/insert", isAuth, insert);
+router.get("/getAll", isAuth, getAll);
+router.get("/getById/:id", isAuth, getById);
+router.put("/update/:id", isAuth, updateById);
+router.delete("/delete/:id?", isAuth, deleteById);
 
 module.exports = router;

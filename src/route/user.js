@@ -10,12 +10,21 @@ const {
   getById,
   updateById,
   deleteById,
+  login,
+  register
 } = require("../controllers/user");
 
+const { isAuth } = require("../midelwares/auth");
+
 router.post("/insert", insert);
-router.get("/getAll", getAll);
-router.get("/getById/:id", getById);
-router.put("/update/:id", updateById);
-router.delete("/delete/:id?", deleteById);
+router.post("/login", login);
+router.post("/register", register);
+
+router.get("/getAll", isAuth, getAll);
+router.get("/getById/:id", isAuth, getById);
+
+router.put("/update/:id", isAuth, updateById);
+
+router.delete("/delete/:id?", isAuth, deleteById);
 
 module.exports = router;

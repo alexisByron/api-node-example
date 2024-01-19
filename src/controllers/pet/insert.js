@@ -2,7 +2,9 @@ const validator = require("validator");
 const PetModel = require("../../models/Pet");
 
 const insert = async (req, res) => {
-  const params = req.body;
+  let params = req.body;
+  params.createBy = req.user.id;
+
   try {
     let nameIsValid =
       params.name !== undefined && !validator.isEmpty(params.name);
@@ -19,7 +21,7 @@ const insert = async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      error: true,
+      sttatus: 'error',
       message: error.message,
     });
   }

@@ -1,6 +1,7 @@
 const validator = require("validator");
 const UserModel = require("../../models/User");
 const bcrypt = require("bcrypt");
+const jwt = require("../../services/jwt");
 
 const insert = async (req, res) => {
   const params = req.body;
@@ -15,13 +16,19 @@ const insert = async (req, res) => {
 
     params.password = bcrypt.hashSync(params.password, 10);
 
+    const existeUser = await UserModel.findOne({ email: params.email });
+
+    if (existeUser) throw new Error("email already exists");
+
     const newUser = new UserModel(params);
 
     const resultInset = await newUser.save();
 
+    const token = jwt.createToken(resultInset);
+
     return res.status(200).json({
       message: "exito",
-      resultInset,
+      token
     });
   } catch (error) {
     res.status(400).json({
